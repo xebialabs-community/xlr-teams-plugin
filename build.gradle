@@ -1,5 +1,22 @@
-defaultTasks 'build'
+plugins {
+  id "com.github.hierynomus.license" version "0.14.0"
+  id "nebula.release" version "6.0.0"
+}
 
 apply plugin: 'java'
 
-version='1.0.0'
+
+if (!project.hasProperty('release.scope')) {
+  project.ext['release.scope'] = 'patch'
+}
+
+if (!project.hasProperty('release.useLastTag')) {
+  project.ext['release.useLastTag'] = true
+}
+
+license {
+  header rootProject.file('License.md')
+  strictCheck false
+  ext.year = Calendar.getInstance().get(Calendar.YEAR)
+  ext.name = 'XEBIALABS'
+}
