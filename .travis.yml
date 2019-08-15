@@ -11,4 +11,6 @@ deploy:
   file: build/libs/xlr-msteams-plugin.jar
   skip_cleanup: true
   on:
+    all_branches: true
+    tags: true
     repo: xebialabs-community/xlr-teams-plugin
