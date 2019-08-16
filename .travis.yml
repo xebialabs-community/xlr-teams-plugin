@@ -8,7 +8,7 @@ deploy:
   api_key:
     secure: X/be6cfXfi6jRJyNhHB0XkJtKQZQ/8Cwkcx0XgKbXGvEQ0pyz87qh0AUgW6AMfVqqGFP9oIN8lWdBh1nveEy3RJi+4zJbgkv0LIPTbjwpODScm2IvBDqsOehhct8VDCuWJSJyRNB+haVT0zUOmyynvnHzk+1TrDtP6fp302MZx4PJsBfQHUIoEwCTy6vMkdGZLoT8+H1KcoXvnG8obhNILZnP5s7agVx/BlviON6gRuXBpSu7/KdPf4BNUL3KIAt6ym4IesvN0Iy+PchV+reBL8F6FCgs+sdCuK7JKoAdbs64rcUWkMGY0RZUDOpCgXwJuj/cGz8dDEmwBW5zagmV4HblDlWzlakOmjLNVJisX7ailcvM0yqfPZlEb+mXMgyasLC6byj+phBJroxQEmvKqYqRSvsEScZeb85S9k3kxpWygh2mmAimSncIa6Na4isJi9tumhkzQRtgNJMbKilqZqYipvQ2F8k1AVPbhk2jrRuK8Rj4KPUPOw7QW0iGOnQoxyFR5ziU9elhxsj2ihI4pMoReUk9VULOFKL5h21CLknBF5KRhDtqd2I++E91fymQHNjaGJeFjun1zTzOLAX0mUXewUI5W0KOLOPhA1QK7KOlB+9e4KS/iOVkaYJrTOf8ZvdYmDE3hmQG4B/JWrwnmvT517CXfJnLxxMt33I1ms=
   file_glob: true
-  file: build/libs/xlr-msteams-plugin.jar
+  file: build/libs/*
   skip_cleanup: true
   on:
     all_branches: true
