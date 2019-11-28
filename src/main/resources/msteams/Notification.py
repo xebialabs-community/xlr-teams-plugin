@@ -28,7 +28,7 @@ response = ''
 url = server['url']
 user = server['userName']
 icon = server['userIcon']
-#proxyUrl = server['proxyUrl']
+proxyUrl = server['proxyUrl']
 if not url.strip():
     print 'Error!'
     print 'Server configuration url undefined\n'
@@ -57,6 +57,12 @@ try:
     else:
         postdata = {'channel': channel.strip(), 'username': user.strip(), 'text': message.strip(), 'mrkdwn': True}
     data = json.dumps(postdata)
+
+    if proxyUrl:
+        proxy = urllib2.ProxyHandler({'http': proxyUrl, 'https': proxyUrl})
+        opener = urllib2.build_opener(proxy)
+        urllib2.install_opener(opener)
+
     response = urllib2.urlopen(request, data)
 except urllib2.HTTPError as error:
     print 'HTTP %s error!' % error.code
