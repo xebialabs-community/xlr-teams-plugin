@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 
-    Copyright 2019 XEBIALABS
+    Copyright 2020 XEBIALABS
     
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
     The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -11,7 +11,7 @@
 
 <synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xebialabs.com/deployit/synthetic" xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
 
-    <type type="msteams.Server" extends="xlrelease.Configuration">
+    <type type="msteams.Server" extends="xlrelease.Configuration" label="Microsoft Teams: Instance">
 
         <property name="url" label="Teams URL" description="MSTeams Channel generated Incoming WebHook URL" required="true"/>
         <property name="userName" label="User name" description="Name that will appear in the notifications" required="false"/>
@@ -21,11 +21,11 @@
         -->
     </type>
 
-    <type type="msteams.Notification" extends="xlrelease.PythonScript">
+    <type type="msteams.Notification" extends="xlrelease.PythonScript" label="Microsoft Teams: Notification">
 
         <!-- Plugin -->
         <property name="iconLocation" hidden="true" default="msteams/logo.png"/>
-        <property name="taskColor" hidden="true" default="#EC8022"/>
+        <property name="taskColor" hidden="true" default="#4f59b9"/>
 
         <!-- Inputs -->
         <property name="server" category="input" label="Server" description="The MS Teams server definition to use" required="true" referenced-type="msteams.Server" kind="ci"/>
