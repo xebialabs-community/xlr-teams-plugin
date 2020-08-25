@@ -16,9 +16,7 @@
         <property name="url" label="Teams URL" description="MSTeams Channel generated Incoming WebHook URL" required="true"/>
         <property name="userName" label="User name" description="Name that will appear in the notifications" required="false"/>
         <property name="userIcon" label="User icon" description="Icon to use in the notifications, it should be a icon emoji" required="false" hidden="true"/>
-        <!-- Proxy settings if required 
         <property name="proxyUrl" category="Input" label="Proxy URL" description="Proxy URL to use in format http://username:password@proxyurl:proxyport, leave blank if not required" required="false"/>
-        -->
     </type>
 
     <type type="msteams.Notification" extends="xlrelease.PythonScript" label="Microsoft Teams: Notification">
