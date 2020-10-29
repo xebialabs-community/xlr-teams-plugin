@@ -14,7 +14,7 @@
     <type type="msteams.Server" extends="xlrelease.Configuration" label="Microsoft Teams: Instance">
 
         <property name="url" label="Teams URL" description="MSTeams Channel generated Incoming WebHook URL" required="true"/>
-        <property name="userName" label="User name" description="Name that will appear in the notifications" required="false"/>
+        <property name="userName" label="User name" description="Name that will appear in the notifications" required="true"/>
         <property name="userIcon" label="User icon" description="Icon to use in the notifications, it should be a icon emoji" required="false" hidden="true"/>
         <property name="proxyUrl" category="Input" label="Proxy URL" description="Proxy URL to use in format http://username:password@proxyurl:proxyport, leave blank if not required" required="false"/>
     </type>
