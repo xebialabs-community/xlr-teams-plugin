@@ -29,22 +29,18 @@ url = server['url']
 user = server['userName']
 icon = server['userIcon']
 proxyUrl = server['proxyUrl']
-if not url.strip():
-    print 'Error!'
+if url in ["", None]:
     print 'Server configuration url undefined\n'
-    sys.exit(100)
-if not user.strip():
-    print 'Error!'
+    sys.exit(1)
+if user in ["", None]:
     print 'Server configuration user name undefined\n'
-    sys.exit(100)
-if not channel.strip():
-    print 'Error!'
-    print 'Parameter channel undefined\n'
-    sys.exit(200)
-if not message.strip():
-    print 'Error!'
-    print 'Parameter message undefined\n'
-    sys.exit(200)
+    sys.exit(1)
+if channel in ["", None]:
+    print 'The task parameter _channel_ is undefined\n'
+    sys.exit(1)
+if message in ["", None]:
+    print 'The task parameter _message_ undefined\n'
+    sys.exit(1)
 
 
 # Call MSTeams Incoming WebHook
