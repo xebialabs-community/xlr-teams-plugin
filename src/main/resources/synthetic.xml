@@ -16,7 +16,8 @@
         <property name="url" label="Teams URL" description="Incoming Webhook URL for the MS Teams channel" required="true"/>
         <property name="userName" label="Username" description="Name that will appear in the notifications" required="true"/>
         <property name="userIcon" label="User icon" description="Icon to use in the notifications, it should be a icon emoji" required="false" hidden="true"/>
-        <property name="proxyUrl" category="Input" label="Proxy URL" description="Proxy URL to use in format http://username:password@proxyurl:proxyport, leave blank if not required" required="false"/>
+        <property name="proxyUrl" category="Networking" label="Proxy URL" description="Proxy URL to use in format http://username:password@proxyurl:proxyport, leave blank if not required" required="false"/>
+        <property name="channel" category="Test Connection" label="Channel" description="To post a test message, specify a target for the notification - use `#` to refer to a channel or direct message (for example, '#testingchannel')" required="false"/>
     </type>
 
     <type type="msteams.Notification" extends="xlrelease.PythonScript" label="Microsoft Teams: Notification">
@@ -27,7 +28,7 @@
 
         <!-- Inputs -->
         <property name="server" category="input" label="Server" description="The MS Teams server definition to use" required="true" referenced-type="msteams.Server" kind="ci"/>
-        <property name="channel" category="input" label="Channel" description="The target for the notification, use `#` to refer to a channel or direct message (For example, '#testingchannel'" required="true"/>
+        <property name="channel" category="input" label="Channel" description="The target for the notification, use `#` to refer to a channel or direct message (for example, '#testingchannel')" required="true"/>
         <property name="message" category="input" label="Message" description="The notification message text (Markdown syntax can be used)" required="true" size="large"/>
 
     </type>
