@@ -18,6 +18,7 @@
         <property name="userIcon" label="User icon" description="Icon to use in the notifications, it should be a icon emoji" required="false" hidden="true"/>
         <property name="proxyUrl" category="Networking" label="Proxy URL" description="Proxy URL to use in format http://username:password@proxyurl:proxyport, leave blank if not required" required="false"/>
         <property name="channel" category="Test Connection" label="Channel" description="To post a test message, specify a target for the notification - use `#` to refer to a channel or direct message (for example, '#testingchannel')" required="false"/>
+
     </type>
 
     <type type="msteams.Notification" extends="xlrelease.PythonScript" label="Microsoft Teams: Notification">
@@ -30,6 +31,30 @@
         <property name="server" category="input" label="Server" description="The MS Teams server definition to use" required="true" referenced-type="msteams.Server" kind="ci"/>
         <property name="channel" category="input" label="Channel" description="The target for the notification, use `#` to refer to a channel or direct message (for example, '#testingchannel')" required="true"/>
         <property name="message" category="input" label="Message" description="The notification message text (Markdown syntax can be used)" required="true" size="large"/>
+
+    </type>
+
+    <type type="msteams.NotificationTaskStatus" extends="xlrelease.PythonScript" label="Microsoft Teams: Notification Task Status">
+
+        <!-- Plugin -->
+        <property name="iconLocation" hidden="true" default="msteams/logo.png"/>
+        <property name="taskColor" hidden="true" default="#4f59b9"/>
+
+        <!-- Inputs -->
+        <property name="releaseId" category="input" label="Release ID" required="true"/>
+        <property name="phaseTitle" category="input" required="true"/>
+        <property name="taskTitle" category="input" required="true"/>
+        <property name="server" category="input" description="The MS Teams server definition to use" required="true" referenced-type="msteams.Server" kind="ci"/>
+        <property name="channel" category="input" description="The target for the notification, use `#` to refer to a channel or direct message (for example, '#testingchannel')" required="true"/>
+        <property name="started" category="script" kind="boolean" default="false"/>
+        <property name="notifyOnStart" category="input" kind="boolean" default="false" description="Send a notification upon the start of the specified task"/>
+        <property name="notifyOnEnd" category="input" kind="boolean" default="true" description="Send a notification upon the completion of the specified task (notifies on all conclusive statuses, like Completed, Aborted, Skipped, Failed,...)"/>
+        <property name="status" category="input" kind="boolean" default="true" description="Include a line in the notification, which details the task status"/>
+        <property name="owner" category="input" kind="boolean" default="true" description="Include a line in the notification, which details the owner"/>
+        <property name="team" category="input" kind="boolean" default="true" description="Include a line in the notification, which details the team"/>
+        <property name="releaseLink" category="input" kind="boolean" default="true" description="Include a line in the notification, which provides a link to the release"/>
+        <property name="taskLink" category="input" kind="boolean" default="true" description="Include a line in the notification, which provides a link to the task"/>
+        <property name="pollFrequency" category="input" kind="integer" default="10" description="Duration in seconds between task status checks"/>
 
     </type>
 

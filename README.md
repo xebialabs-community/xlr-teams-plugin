@@ -29,7 +29,7 @@ Before setting up a notification task it is **required** to setup an MSTeams ser
 ## Available Tasks
 The available tasks for interfacing with Teams. These utilize the [Microsoft Teams API](https://docs.microsoft.com/en-us/graph/teams-concept-overview) and the provided Teams Connector Authentication Configuration.
 
-## Notification Task
+### Notification
 The MSTeams notification task needs the next information:
 
 - **Server:** The Teams server definition to use. (the shared configuration)
@@ -38,7 +38,10 @@ The MSTeams notification task needs the next information:
 
 ![notification](images/notification.png)
 
-## Example
+### Notification Task Status
+This task uses a release ID, phase title, and task title to identify a single task.  The notification task will run until the specified task reaches a conclusive status (failed, completed, aborted,...), watching the specified task along the way.  A standard use case would be putting any task of interest in a parallel group with this task, and having the notification task watch the other task in the parallel group.  In this case, the `${release.id}` variable would be used in the Release ID field, and the phase and task titles would match the task of interest.
+
+## Example Notification
 
 ![result](images/result.png)
 
